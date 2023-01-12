@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('roles')->default('USER');  //USER(buyer n seller), ADMIN(all access)
 
             $table->longText('address_one');
             $table->longText('address_two');
