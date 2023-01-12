@@ -5,8 +5,8 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\DashboardProductController;
 use App\Http\Controllers\DashboardSettingController;
 use App\Http\Controllers\DashboardTransactionController;
@@ -60,5 +60,11 @@ Route::get('/dashboard/settings', [DashboardSettingController::class, 'store'])
 Route::get('/dashboard/account', [DashboardSettingController::class, 'account'])
     ->name('store-settings-account');
 
+// ->middleware(['auth', 'admin'])
+Route::prefix('admin')
+    ->namespace('Admin')
+    ->group(function(){
+        Route::get('/', [DashboardController::class, 'index'])->name('admin-dashboard');
+    });
 
 Auth::routes();
