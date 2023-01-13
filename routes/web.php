@@ -11,6 +11,8 @@ use App\Http\Controllers\DashboardProductController;
 use App\Http\Controllers\DashboardSettingController;
 use App\Http\Controllers\DashboardTransactionController;
 use App\Http\Controllers\Admin\DashboardController as DashboardAdminController;
+use App\Http\Controllers\Admin\CategoryController as CategoryAdminController;
+use App\Http\Controllers\Admin\UserController as UserAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,11 +63,14 @@ Route::get('/dashboard/settings', [DashboardSettingController::class, 'store'])
 Route::get('/dashboard/account', [DashboardSettingController::class, 'account'])
     ->name('store-settings-account');
 
+
 // ->middleware(['auth', 'admin'])
-Route::prefix('admin')
-    ->namespace('Admin')
-    ->group(function(){
+Route::prefix('admin')->group(function(){
         Route::get('/', [DashboardAdminController::class, 'index'])->name('admin-dashboard');
-    });
+        Route::resource('category', CategoryAdminController::class);
+        Route::resource('user', UserAdminController::class);
+});
+
+
 
 Auth::routes();
