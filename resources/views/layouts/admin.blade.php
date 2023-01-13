@@ -108,14 +108,6 @@
                           <a href="/" class="dropdown-item">Logout</a>
                         </div>
                       </li>
-                      <li>
-                        <li class="nav-item">
-                          <a href="#" class="nav-link d-inline-block mt-2">
-                             <img src="/images/icon-cart-filled.svg" alt="">
-                            <div class="card-badge">3</div>
-                          </a>
-                        </li>
-                      </li>
                     </ul>
 
                     <!-- MOBILE MENU -->
