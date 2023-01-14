@@ -13,6 +13,7 @@ use App\Http\Controllers\DashboardTransactionController;
 use App\Http\Controllers\Admin\DashboardController as DashboardAdminController;
 use App\Http\Controllers\Admin\CategoryController as CategoryAdminController;
 use App\Http\Controllers\Admin\UserController as UserAdminController;
+use App\Http\Controllers\Admin\ProductController as ProductAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,6 +70,7 @@ Route::prefix('admin')->group(function(){
         Route::get('/', [DashboardAdminController::class, 'index'])->name('admin-dashboard');
         Route::resource('category', CategoryAdminController::class);
         Route::resource('user', UserAdminController::class);
+        Route::resource('product', ProductAdminController::class);
 });
 
 
