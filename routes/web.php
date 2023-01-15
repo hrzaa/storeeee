@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\DashboardController as DashboardAdminController;
 use App\Http\Controllers\Admin\CategoryController as CategoryAdminController;
 use App\Http\Controllers\Admin\UserController as UserAdminController;
 use App\Http\Controllers\Admin\ProductController as ProductAdminController;
+use App\Http\Controllers\Admin\ProductGalleryController as ProductGalleryAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,7 @@ use App\Http\Controllers\Admin\ProductController as ProductAdminController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
+Route::get('/categories/{id}', [CategoryController::class, 'detail'])->name('categories-detail');
 Route::get('/details/{id}', [DetailController::class, 'index'])->name('detail');
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::get('/success', [CartController::class, 'success'])->name('success');
@@ -71,6 +73,7 @@ Route::prefix('admin')->group(function(){
         Route::resource('category', CategoryAdminController::class);
         Route::resource('user', UserAdminController::class);
         Route::resource('product', ProductAdminController::class);
+        Route::resource('product-gallery', ProductGalleryAdminController::class);
 });
 
 

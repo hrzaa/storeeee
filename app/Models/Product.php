@@ -4,7 +4,7 @@ namespace App\Models;
 
 use App\Models\User;
 use App\Models\Category;
-use App\Models\ProductGallery;
+use App\Models\ProductsGallery;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -20,7 +20,7 @@ class Product extends Model
 
     public function galleries()
     {
-        return $this->hasMany(ProductGallery::class, 'products_id', 'id');
+        return $this->hasMany(ProductsGallery::class, 'products_id', 'id');
     }
 
     public function user()
