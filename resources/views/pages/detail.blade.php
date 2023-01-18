@@ -24,7 +24,7 @@
 
       </section>
 
-      <section class="store-gallery" id="gallery">
+      <section class="store-gallery mb-3" id="gallery">
         <div class="container">
           <div class="row">
             <div class="col-lg-8" data-aos="zoom-in">
@@ -58,19 +58,26 @@
         </div>
       </section>
 
-      <div class="store-details-container" data-aos="fade-up">
+      <div class="store-details-container " data-aos="fade-up">
         <section class="store-heading">
           <div class="container">
             <div class="row">
               <div class="col-lg-8">
-                <h1>Sofa Ternyaman</h1>
-                <div class="owner">By Hareza Yoan</div>
-                <div class="price">$500</div>
+                <h1>{{ $product->name }}</h1>
+                <div class="owner">By {{ $product->user->store_name  }}</div>
+                <div class="price">${{ number_format($product->price) }}</div>
               </div>
               <div class="col-lg-2" data-aos="zoom-in">
-                <a href="/cart.html" class="btn btn-success nav-link px-4 text-white btn-block mb-3">
-                  Add to Cart
-                </a>
+                  @auth
+                  <form action="{{ route('detail-add', $product->id) }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <button type="submit" class="btn btn-success nav-link px-4 text-white btn-block mb-3">Add to Cart</button>
+                  </form>
+                    
+                  @else
+                    <a href="{{ route('login') }}" class="btn btn-success nav-link px-4 text-white btn-block mb-3">Sign To Add</a>
+                  @endauth
+                
               </div>
             </div>
           </div>
@@ -79,8 +86,7 @@
           <div class="container">
             <div class="row">
               <div class="col-12 col-lg-8">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti sint sunt nihil blanditiis laborum magni quo suscipit accusamus! Ullam, fugit. Voluptatem enim est deserunt ducimus molestias, soluta similique facilis reprehenderit?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi illum eos natus doloribus eligendi harum voluptatum delectus, nobis quasi consectetur voluptas neque architecto hic! Quos, minus. Est reprehenderit nihil harum?</p>
+                {!! $product->description !!}
               </div>
             </div>
           </div>
@@ -138,22 +144,12 @@
         data:{
           activePhoto: 0, 
           photos:[
+           @foreach($product->galleries as $gallery)
             {
-              id:1,
-              url:"/images/product-details-1.jpg"
+              id:{{ $gallery->id }},
+              url:"{{ Storage::url($gallery->photos) }}",
             },
-            {
-              id:2,
-              url:"/images/product-details-2.jpg"
-            },
-            {
-              id:3,
-              url:"/images/product-details-3.jpg"
-            },
-            {
-              id:4,
-              url:"/images/product-details-4.jpg"
-            },
+           @endforeach
           ],
         },
         methods:{
