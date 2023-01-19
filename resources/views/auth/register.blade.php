@@ -160,14 +160,6 @@
         el:'#register', 
         mounted(){
           AOS.init();
-          // this.$toasted.error(
-          //   "Maaf, email sudah terdaftar pada sistem kami.", 
-          //   {
-          //     position:"top-center",
-          //     className:"rounded",
-          //     duration:1000
-          //   }
-          // );
         },
         methods:{
           checkForEmailAvailability:function(){

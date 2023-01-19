@@ -46,7 +46,7 @@
               </a>
               <div class="dropdown-menu">
                 <a href="/dashboard.html" class="dropdown-item">Dashboard</a>
-                <a href="/dashboard-account.html" class="dropdown-item"
+                <a href="/dashboard-acco  unt.html" class="dropdown-item"
                   >Settings</a
                 >
                 <div class="dropdown-divider"></div>
