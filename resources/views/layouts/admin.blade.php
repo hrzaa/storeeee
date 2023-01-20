@@ -102,7 +102,7 @@
                             alt=""
                             class="rounded-circle mr-2 profile-picture"
                           />
-                          Hi, Hareza
+                          Hi, {{ auth::user()->name }}
                         </a>
                         <div class="dropdown-menu">
                           <a href="/dashboard.html" class="dropdown-item">Dashboard</a>
@@ -119,7 +119,7 @@
                     <ul class="navbar-nav d-block d-lg-none">
                       <li class="nav-item">
                         <a href="#" class="nav-link">
-                          Hi, Hareza
+                          Hi, {{ auth::user()->name }}
                         </a>
                       </li>
                     </ul>

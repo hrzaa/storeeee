@@ -20,8 +20,7 @@ return new class extends Migration
             $table->integer('insurance_price');
             $table->integer('shipping_price');
             $table->integer('total_price');
-            $table->string('shipping_status'); //PENDING/SHIPPING/SUCCESS/
-            $table->string('resi'); 
+            $table->string('transaction_status'); //PENDING/SHIPPING/SUCCESS/
             $table->string('code'); 
            
             $table->softDeletes();
