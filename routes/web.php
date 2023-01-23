@@ -90,11 +90,11 @@ Route::group(['middleware' => ['auth']], function(){
         ->name('dashboard-transaction-details');
 
     Route::get('/dashboard/settings', [DashboardSettingController::class, 'store'])
-        ->name('store-settings-store');
+        ->name('dashboard-settings-store');
     Route::get('/dashboard/account', [DashboardSettingController::class, 'account'])
-        ->name('store-settings-account');
-    Route::post('/dashboard/account/{redirect}', [DashboardSettingController::class, 'update'])
-        ->name('store-settings-redirect');
+        ->name('dashboard-settings-account');
+    Route::post('/dashboard/update/{redirect}', [DashboardSettingController::class, 'update'])
+        ->name('dashboard-settings-redirect');
 
 });
 

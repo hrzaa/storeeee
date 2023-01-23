@@ -42,13 +42,13 @@
               >Transactions</a
             >
             <a
-              href="{{ route('store-settings-store') }}"
+              href="{{ route('dashboard-settings-store') }}"
               class="list-group-item list-group-item-action {{ (request()->is('dashboard/settings*')) ? 'active' : '' }}"
               >Settings</a
             >
             <a
-              href="{{ route('store-settings-account') }} {{ (request()->is('dashboard/account*')) ? 'active' : '' }}"
-              class="list-group-item list-group-item-action"
+              href="{{ route('dashboard-settings-account') }}" 
+              class="list-group-item list-group-item-action {{ (request()->is('dashboard/account*')) ? 'active' : '' }}"
               >My Account</a
             >
           </div>
