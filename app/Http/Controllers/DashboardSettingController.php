@@ -38,4 +38,6 @@ class DashboardSettingController extends Controller
 
         return redirect()->route($redirect);
     }
+
+   
 }

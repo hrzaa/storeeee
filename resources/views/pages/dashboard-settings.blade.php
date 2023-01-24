@@ -11,7 +11,7 @@
         <p class="dashboard-subtitle">
           Make Store that profitable
         </p>
-        
+          
         <div class="dashboard-content">
           <div class="row">
             <div class="col-12">
