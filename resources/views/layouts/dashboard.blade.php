@@ -92,8 +92,8 @@
                           Hi, {{ auth::user()->name }}
                         </a>
                         <div class="dropdown-menu">
-                          <a href="/dashboard.html" class="dropdown-item">Dashboard</a>
-                          <a href="/dashboard-account.html" class="dropdown-item"
+                          <a href="{{ route('dashboard') }}" class="dropdown-item">Dashboard</a>
+                          <a href="{{ route('dashboard-settings-store') }}" class="dropdown-item"
                             >Setting</a
                           >
                           <div class="dropdown-divider"></div>
